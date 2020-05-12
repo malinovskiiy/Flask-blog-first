@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Posts</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class="container pt-5">
+        <h1 class="p-2">Create new post</h1>
+        <form action="/posts" method="POST">
+            <input type="text" name="title" id="title" class="form-control" placeholder="Title"><br>
+            <input type="text" name="author" id="author" class="form-control" placeholder="Author"><br>
+            <textarea type="text" name="content" id="content" class="form-control" placeholder="Text"></textarea><br>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+    </div>
+{% endblock %}

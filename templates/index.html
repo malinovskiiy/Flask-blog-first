@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Home</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container p-5">
+
+        <h1>All posts</h1>
+        <div class="post-list mt-5">
+            {% for post in posts %}
+                <div class="jumbotron">
+                    <h2>{{ post.title }}</h2>
+                    <small class="mt-2">Written by <strong>{% if post.author %}{{ post.author }}{% endif %}</strong>  on {{ post.date }}</small>
+                    <p class="mt-2">{{ post.content }}</p>
+                   <a class="btn btn-danger" href="/posts/delete/{{ post.id }}">Delete</a>
+                   <a class="btn btn-info" href="/posts/edit/{{ post.id }}">Edit</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
